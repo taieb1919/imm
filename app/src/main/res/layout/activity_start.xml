@@ -1,0 +1,68 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:background="#0099cc"
+    tools:context="com.example.taieb.immkd.start">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is neede to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+   <LinearLayout android:id="@+id/fullscreen_content" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+       android:layout_gravity="center|top"
+       android:orientation="vertical"
+       android:weightSum="1">
+
+       <LinearLayout
+           android:orientation="vertical"
+           android:layout_width="match_parent"
+           android:layout_height="69dp"
+           android:id="@+id/textvieww"
+           android:layout_gravity="top"
+           android:weightSum="1"
+           android:layout_weight="0.18">
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="New Text"
+               android:id="@+id/textview"
+               android:textStyle="bold|normal"
+               android:textSize="@dimen/abc_action_bar_default_height_material"
+               android:textAlignment="center"
+               android:singleLine="true"
+               android:textColor="#ffff667e"
+               android:layout_gravity="center"
+               android:gravity="center_vertical|center_horizontal"
+               android:layout_weight="0.48" />
+
+
+
+       </LinearLayout>
+
+       <LinearLayout
+           style="?metaButtonBarStyle"
+           tools:ignore="UselessParent"
+           android:id="@+id/LLB1"
+           android:layout_width="match_parent"
+           android:layout_height="82dp"
+           android:orientation="vertical"
+           android:layout_gravity="center"
+           android:layout_marginTop="15mm"
+            />
+
+    <LinearLayout
+        style="?metaButtonBarStyle"
+        tools:ignore="UselessParent"
+        android:id="@+id/LLB2"
+        android:layout_width="match_parent"
+        android:layout_height="82dp"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="10mm"/>
+
+</LinearLayout>
+
+</FrameLayout>

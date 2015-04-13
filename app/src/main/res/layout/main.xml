@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#0099cc"
+    android:orientation="vertical"
+    tools:context="com.javacodegeeks.androidstartactivityforresultexample.ActivityOne"
+    android:clickable="false"
+    android:weightSum="1">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="false"
+        android:id="@+id/scrollin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttoncontainer">
+
+
+        <Button
+            android:id="@+id/scanner"
+            android:layout_width="133dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:onClick="scanQR"
+            android:text="QR Code"
+            android:textSize="18dp"
+            android:textColor="#ff0074ff"
+            android:background="#fffff700"
+            android:layout_gravity="center_horizontal">
+        </Button>
+    </LinearLayout>
+    </ScrollView>
+
+
+
+</LinearLayout>
