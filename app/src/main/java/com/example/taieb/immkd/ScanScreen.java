@@ -1,9 +1,5 @@
 package com.example.taieb.immkd;
 
-import com.example.taieb.immkd.parsing.parsingxls;
-import com.example.taieb.immkd.util.SystemUiHider;
-import com.javacodegeeks.androidqrcodeexample.R;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -19,15 +15,9 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
-import org.apache.poi.hssf.usermodel.HSSFFont;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.util.HSSFColor;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
+import com.example.taieb.immkd.parsing.parsingxls;
+import com.example.taieb.immkd.util.SystemUiHider;
+import com.javacodegeeks.androidqrcodeexample.R;
 
 import java.io.InputStream;
 

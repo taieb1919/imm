@@ -162,13 +162,6 @@
                 android:paddingTop="10dp"
                 android:layout_weight="0.76">
 
-                <Button
-                    android:layout_width="383dp"
-                    android:layout_height="wrap_content"
-                    android:text="FOR aymen"
-                    android:id="@+id/button"
-                    android:onClick="foraymen" />
-
             </LinearLayout>
         </LinearLayout>
 
