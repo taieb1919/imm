@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.taieb.immkd.parsing.Article;
@@ -139,6 +141,21 @@ public void simplesearch(View v) {
     }else {
         System.out.println(searchresult);
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
+        LinearLayout layprincipal = (LinearLayout) findViewById(R.id.LLB1);
+//        LinearLayout l1=(LinearLayout) getResources().getLayout(R.layout.layoutsearchok);
+//        layprincipal.addView(l1);
+
+        TextView txtcase = (TextView) findViewById(R.id.CASETEXT);
+        txtcase.setText(art.getCASE());
+
+        TextView txtbox = (TextView) findViewById(R.id.BOXTEXT);
+        txtbox.setText(art.getListe_BOX().get(0));
+
+        TextView txtPartName = (TextView) findViewById(R.id.PARTNAMETEXT);
+        txtPartName.setText(art.getPart_Name());
+
+       // EditText mEdit = (EditText) l1.get
+
     }
     fileparser.saveExcelFile(this,"");
 }

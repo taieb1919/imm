@@ -61,25 +61,22 @@
             android:id="@+id/containerlayout">
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="52dp"
-                android:weightSum="1"
-                android:paddingTop="10dp">
+                android:layout_height="wrap_content"
+                android:weightSum="1">
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="CASE     "
+                    android:text="CASE"
                     android:id="@+id/textView"
 
-                    android:paddingTop="10dp"
-                    android:paddingRight="3dp"
-                    android:gravity="right"
+                    android:gravity="center_vertical|center_horizontal"
                     android:textColor="#ff4aff00"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -88,30 +85,30 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/CASETEXT"
 
-                    android:paddingLeft="3dp"
-                    android:gravity="left"
-                    android:textSize="20dp" />
-            </LinearLayout>
 
+                    android:textSize="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold" />
+            </LinearLayout>
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
                 android:weightSum="1"
-                android:paddingTop="10dp" >
+
+               >
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="BOX     "
-                    android:id="@+id/textView3"
-                    android:paddingTop="10dp"
-                    android:paddingRight="3dp"
-                    android:gravity="right"
+                    android:text="BOX"
+                    android:id="@+id/textView1"
+
+                    android:gravity="center_vertical|center_horizontal"
                     android:textColor="#ff4aff00"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -119,30 +116,30 @@
                     android:layout_weight="0.5"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/BOXTEXT"
-                    android:paddingLeft="3dp"
-                    android:gravity="left"
-                    android:textSize="20dp" />
-            </LinearLayout>
 
+
+                    android:textSize="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold" />
+            </LinearLayout>
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
                 android:weightSum="1"
-                android:paddingTop="10dp" >
+                >
 
                 <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="PART NAME     "
-                    android:id="@+id/textView5"
-                    android:paddingTop="10dp"
-                    android:paddingRight="3dp"
-                    android:gravity="right"
+                    android:text="Part Name"
+                    android:id="@+id/textView2"
+
+                    android:gravity="center_vertical|center_horizontal"
                     android:textColor="#ff4aff00"
-                    android:textSize="20dp" />
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -150,17 +147,21 @@
                     android:layout_weight="0.5"
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:id="@+id/PARTNAMETEXT"
-                    android:paddingLeft="3dp"
-                    android:gravity="left"
-                    android:textSize="20dp" />
+
+
+                    android:textSize="20dp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:textStyle="bold" />
             </LinearLayout>
+
+
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
                 android:layout_height="52dp"
                 android:weightSum="1"
-                android:paddingTop="10dp"
+
                 android:layout_weight="0.76">
 
             </LinearLayout>
