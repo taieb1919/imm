@@ -33,7 +33,7 @@
                android:textSize="@dimen/abc_action_bar_default_height_material"
                android:textAlignment="center"
                android:singleLine="true"
-               android:textColor="#97ffffff"
+               android:textColor="#ffffffff"
                android:layout_gravity="center"
                android:gravity="center_vertical|center_horizontal"
                android:layout_weight="0.48" />

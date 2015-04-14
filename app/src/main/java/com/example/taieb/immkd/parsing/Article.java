@@ -56,4 +56,15 @@ public class Article {
     public void setListe_Station(List<Station> liste_Station) {
         this.liste_Station = liste_Station;
     }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "Part_Num='" + Part_Num + '\'' +
+                ", Part_Name='" + Part_Name + '\'' +
+                ", CASE='" + CASE + '\'' +
+                ", liste_BOX=" + liste_BOX.get(0) +
+                ", liste_Station=" + liste_Station.get(0).getStat_Name() +
+                '}';
+    }
 }

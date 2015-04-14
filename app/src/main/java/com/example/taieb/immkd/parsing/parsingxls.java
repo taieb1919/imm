@@ -82,7 +82,7 @@ public class parsingxls {
                    String valueAsString = df.formatCellValue(cl);
                    if (valueAsString.trim().equals(cellContent)) {
            //            cl.setCellStyle(cellStyle);
-                       return i + 1;
+                       return i ;
                    }
                }
            }
@@ -124,10 +124,13 @@ public class parsingxls {
             {
                 finish=true;
             }
+            System.out.println(article.toString());
 
 
 
         }while(!finish);
+
+
 
         return  article;
 

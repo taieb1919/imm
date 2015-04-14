@@ -112,7 +112,8 @@ public void simplesearch(View v) {
 
     EditText mEdit = (EditText) findViewById(R.id.editText);
     //System.out.println(mEdit.getText().toString());
-    int searchresult=fileparser.findRow(this.idmodele,mEdit.getText().toString().trim());
+    String ValueToSearch= mEdit.getText().toString().trim();
+    int searchresult=fileparser.findRow(this.idmodele,ValueToSearch);
 
     new Thread()
     {
@@ -136,6 +137,7 @@ public void simplesearch(View v) {
         System.out.println("NOTfound");
     }else {
         System.out.println(searchresult);
+        fileparser.getallrows(idmodele,searchresult,ValueToSearch);
     }
     fileparser.saveExcelFile(this,"");
 }
