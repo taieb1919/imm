@@ -15,6 +15,7 @@ import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.taieb.immkd.parsing.Article;
 import com.example.taieb.immkd.parsing.parsingxls;
 import com.example.taieb.immkd.util.SystemUiHider;
 import com.javacodegeeks.androidqrcodeexample.R;
@@ -121,7 +122,7 @@ public void simplesearch(View v) {
         {
             try
             {
-                sleep(1000);
+                sleep(2000);
             }
             catch (Exception e)
             {
@@ -137,7 +138,7 @@ public void simplesearch(View v) {
         System.out.println("NOTfound");
     }else {
         System.out.println(searchresult);
-        fileparser.getallrows(idmodele,searchresult,ValueToSearch);
+        Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
     }
     fileparser.saveExcelFile(this,"");
 }
