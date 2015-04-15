@@ -155,17 +155,58 @@
             </LinearLayout>
 
 
-
+            <ScrollView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:fillViewport="false"
+                android:id="@+id/scrollin2">
 
             <LinearLayout
-                android:orientation="horizontal"
+
+                android:orientation="vertical"
                 android:layout_width="fill_parent"
-                android:layout_height="52dp"
-                android:weightSum="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/Stationcontainer">>
 
-                android:layout_weight="0.76">
+                <TableLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
 
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/cell_shape"
+                            android:padding="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="Station"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/textView4"
+                            android:textColor="#ff4aff00"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/cell_shape"
+                            android:padding="5dp"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="QTY"
+                            android:gravity="center_horizontal"
+                            android:id="@+id/textView5"
+                            android:textColor="#ff4aff00"
+                            android:textStyle="bold" />
+
+
+
+                    </TableRow>
+                </TableLayout>
             </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 
 
