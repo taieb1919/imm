@@ -57,6 +57,58 @@ public class Article {
         this.liste_Station = liste_Station;
     }
 
+    public void CleanStationList()
+    {
+        if(liste_Station.size()>1)
+        {
+            Station s=liste_Station.get(0);
+            boolean differant=false;
+
+            for(int i=0;i<liste_Station.size();i++)
+            {
+                if(!liste_Station.get(i).equals(s))
+                    differant=true;
+                break;
+
+            }
+
+            if(!differant)
+            {
+                liste_Station.clear();
+                liste_Station.add(s);
+            }
+        }
+    }
+
+    public void CleanBOXList()
+    {
+        if(liste_BOX.size()>1)
+        {
+            String s=liste_BOX.get(0);
+            boolean differant=false;
+
+            for(int i=0;i<liste_BOX.size();i++)
+            {
+                if(!liste_BOX.get(i).equals(s))
+                    differant=true;
+                break;
+
+            }
+
+            if(!differant)
+            {
+                String lastS=liste_BOX.get(liste_BOX.size()-1);
+                liste_BOX.clear();
+                if(s.equals(lastS)) {
+                    liste_BOX.add(s);
+                }else
+                {
+                    liste_BOX.add(s+"-"+lastS);
+                }
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Article{" +

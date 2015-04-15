@@ -30,4 +30,24 @@ public class Station {
     public void setQTY(String QTY) {
         this.QTY = QTY;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Station)) return false;
+
+        Station station = (Station) o;
+
+        if (!QTY.equals(station.QTY)) return false;
+        if (!Stat_Name.equals(station.Stat_Name)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Stat_Name.hashCode();
+        result = 31 * result + QTY.hashCode();
+        return result;
+    }
 }
