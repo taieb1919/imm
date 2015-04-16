@@ -50,164 +50,18 @@
 
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" >
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/button"
+            android:onClick="forRH" />
+    </ScrollView>
 
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:weightSum="1"
-            android:id="@+id/containerlayout">
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="CASE"
-                    android:id="@+id/textView"
-
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="#ff4aff00"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/CASETEXT"
-
-
-                    android:textSize="20dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="52dp"
-                android:weightSum="1"
-
-               >
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="BOX"
-                    android:id="@+id/textView1"
-
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="#ff4aff00"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/BOXTEXT"
-
-
-                    android:textSize="20dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textStyle="bold" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="52dp"
-                android:weightSum="1"
-                >
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="Part Name"
-                    android:id="@+id/textView2"
-
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textColor="#ff4aff00"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:id="@+id/PARTNAMETEXT"
-
-
-                    android:textSize="20dp"
-                    android:gravity="center_vertical|center_horizontal"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-            <ScrollView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:fillViewport="false"
-                android:id="@+id/scrollin2">
-
-            <LinearLayout
-
-                android:orientation="vertical"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/Stationcontainer">>
-
-                <TableLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-
-                    <TableRow
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_horizontal">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/cell_shape"
-                            android:padding="5dp"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="Station"
-                            android:gravity="center_horizontal"
-                            android:id="@+id/textView4"
-                            android:textColor="#ff4aff00"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/cell_shape"
-                            android:padding="5dp"
-                            android:textAppearance="?android:attr/textAppearanceLarge"
-                            android:text="QTY"
-                            android:gravity="center_horizontal"
-                            android:id="@+id/textView5"
-                            android:textColor="#ff4aff00"
-                            android:textStyle="bold" />
-
-
-
-                    </TableRow>
-                </TableLayout>
-            </LinearLayout>
-            </ScrollView>
-        </LinearLayout>
-
-
+    <include layout="@layout/layoutsearchok"/>
 </LinearLayout>

@@ -22,7 +22,18 @@ import com.example.taieb.immkd.parsing.parsingxls;
 import com.example.taieb.immkd.util.SystemUiHider;
 import com.javacodegeeks.androidqrcodeexample.R;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
+
 import java.io.InputStream;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.makeText;
@@ -142,6 +153,11 @@ public void simplesearch(View v) {
         System.out.println(searchresult);
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
         LinearLayout layprincipal = (LinearLayout) findViewById(R.id.LLB1);
+
+        View layoutsearchok = findViewById(R.id.containersearchok);
+       // layoutsearchok.findViewById(R.id.)
+      //  R.layout.layoutsearchok.findViewById(R.id.textViewCASE);
+    //    layoutsearchok.findViewById(R.id.textViewCASE);
 //        LinearLayout l1=(LinearLayout) getResources().getLayout(R.layout.layoutsearchok);
 //        layprincipal.addView(l1);
 
@@ -197,7 +213,11 @@ public void simplesearch(View v) {
         }
     }
 
-
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+//////////////////////         FOR AYMEN              /////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 /*
@@ -286,4 +306,110 @@ public void simplesearch(View v) {
 
 
 */
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////            END                 /////////////////////////////////////////////
+//////////////////////         FOR AYMEN              /////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+//////////////////////         FOR RH                 /////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+    public void forRH(View v) throws ParseException {
+        final DataFormatter df = new DataFormatter();
+        SimpleDateFormat Datedf = new SimpleDateFormat("HH:mm");
+
+        List<Date> listdate=new LinkedList<Date>();
+
+        parsingxls fileA = new parsingxls();
+        InputStream myInput=getResources().openRawResource(R.raw.b);
+
+        fileA.readExcelFile(this, myInput);
+        HSSFSheet s1 = fileA.getMyWorkBook().getSheet("a");
+
+        for (int i = 1; i < s1.getPhysicalNumberOfRows(); i++) {
+            Row row = s1.getRow(i);
+            listdate.clear();
+            Date d=new Date();
+
+            if (row!=null) {
+                Cell c1 = row.getCell(5);
+                //System.out.println("Matricule "+df.formatCellValue(row.getCell(0)));
+                String valueToread = df.formatCellValue(c1);
+               // System.out.println("valueToread:   " + valueToread);
+                //System.out.println("longeur:  " + valueToread.length());
+
+                valueToread += " ";
+                //System.out.println("longeur2:  " + valueToread.length());
+
+                if(valueToread.length()>2)
+                {
+                for (int k = 0; k < valueToread.length(); k += 6) {
+                    String valueToConvert = "";
+                    valueToConvert = valueToread.substring(k, k + 5);
+               //     System.out.println(valueToConvert);
+                    d=Datedf.parse(valueToConvert);
+                    listdate.add(d);
+
+
+                }
+
+                    row.createCell(6);
+                    row.getCell(6).setCellValue(CalculHour(listdate));
+
+            }
+            }
+        }
+        fileA.saveExcelFile(this,"original.xls");
+}
+
+
+private String CalculHour(List<Date> listedate)
+{
+    if(listedate.size()==4)
+    {
+         long v= getDateDiff(listedate.get(0),listedate.get(1),TimeUnit.HOURS)+getDateDiff(listedate.get(2),listedate.get(3),TimeUnit.HOURS);
+              v=v/1000;
+
+        int hours = (int)v / 60; //since both are ints, you get an int
+        int minutes =(int) v % 60;
+        return hours+":"+minutes +"H" ;
+    }
+    if(listedate.size()==2)
+    {
+        long v= getDateDiff(listedate.get(0),listedate.get(1),TimeUnit.HOURS);
+        v=v/1000;
+
+        int hours = (int)v / 60; //since both are ints, you get an int
+        int minutes =(int) v % 60;
+        return hours+":"+minutes +"H" ;
+    }
+
+
+    return "0";
+}
+    public static long getDateDiff(Date date1, Date date2, TimeUnit timeUnit) {
+        long diffInMillies = date2.getTime() - date1.getTime();
+        return timeUnit.convert(diffInMillies,TimeUnit.MINUTES);
+    }
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////          END                   /////////////////////////////////////////////
+//////////////////////         FOR RH                 /////////////////////////////////////////////
+//////////////////////                                /////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 }
