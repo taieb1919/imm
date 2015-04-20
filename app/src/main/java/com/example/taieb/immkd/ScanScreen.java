@@ -168,7 +168,7 @@ public void simplesearch(View v) {
         LinearLayout rl =(LinearLayout) this.findViewById(R.id.resultview);
         LayoutInflater layoutInflater = (LayoutInflater)  this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
       //  layoutInflater.in
-        rl.addView(layoutInflater.inflate(R.layout.layoutsearchok, this, false), 1);
+    //    rl.addView(layoutInflater.inflate(R.layout.layoutsearchok, this, false), 1);
 
                 View layoutsearchok = findViewById(R.id.containersearchok);
         TextView txtcase = (TextView) findViewById(R.id.CASETEXT);
