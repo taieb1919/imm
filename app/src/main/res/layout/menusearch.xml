@@ -55,13 +55,15 @@
         android:layout_height="wrap_content"
         android:id="@+id/scrollView" >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Button"
-            android:id="@+id/button"
-            android:onClick="forRH" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/resultview"
+            >
+
+
+            </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/layoutsearchok"/>
 </LinearLayout>

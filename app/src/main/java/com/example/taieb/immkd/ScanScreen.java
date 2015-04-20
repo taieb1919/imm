@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -154,13 +156,21 @@ public void simplesearch(View v) {
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
         LinearLayout layprincipal = (LinearLayout) findViewById(R.id.LLB1);
 
-        View layoutsearchok = findViewById(R.id.containersearchok);
+
        // layoutsearchok.findViewById(R.id.)
       //  R.layout.layoutsearchok.findViewById(R.id.textViewCASE);
     //    layoutsearchok.findViewById(R.id.textViewCASE);
 //        LinearLayout l1=(LinearLayout) getResources().getLayout(R.layout.layoutsearchok);
 //        layprincipal.addView(l1);
 
+
+
+        LinearLayout rl =(LinearLayout) this.findViewById(R.id.resultview);
+        LayoutInflater layoutInflater = (LayoutInflater)  this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+      //  layoutInflater.in
+        rl.addView(layoutInflater.inflate(R.layout.layoutsearchok, this, false), 1);
+
+                View layoutsearchok = findViewById(R.id.containersearchok);
         TextView txtcase = (TextView) findViewById(R.id.CASETEXT);
         txtcase.setText(art.getCASE());
 
@@ -170,10 +180,11 @@ public void simplesearch(View v) {
         TextView txtPartName = (TextView) findViewById(R.id.PARTNAMETEXT);
         txtPartName.setText(art.getPart_Name());
 
-       // EditText mEdit = (EditText) l1.get
+
+             // EditText mEdit = (EditText) l1.get
 
     }
-    fileparser.saveExcelFile(this,"");
+    //fileparser.saveExcelFile(this,"");
 }
 
 
