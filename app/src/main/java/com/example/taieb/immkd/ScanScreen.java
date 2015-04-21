@@ -175,9 +175,6 @@ if(myView!=null) {
         TextView txtPartName = (TextView) findViewById(R.id.PARTNAMETEXT);
         txtPartName.setText(art.getPart_Name());
 
-
-             // EditText mEdit = (EditText) l1.get
-
     }
     //fileparser.saveExcelFile(this,"");
 }
