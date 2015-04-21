@@ -158,7 +158,7 @@ if(myView!=null) {
     if(searchresult<1) {
         View itemInfo1 = getLayoutInflater().inflate(R.layout.layooutnotfound, rl, true);
         TextView txtsearch = (TextView) findViewById(R.id.textToSearch);
-        txtsearch.setText("Search result for : "+ValueToSearch);
+        txtsearch.setText("Search result for : " + ValueToSearch);
     }else {
         System.out.println(searchresult);
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
@@ -176,18 +176,24 @@ if(myView!=null) {
 
         TextView txtPartName = (TextView) findViewById(R.id.PARTNAMETEXT);
         txtPartName.setText(art.getPart_Name());
+
         TableLayout TL=(TableLayout)findViewById(R.id.tableresultat);
+        TableRow TRow=null;
         for (int j=0;j<art.getListe_Station().size();j++)
         {
+            TextView textSTATION=new EditText(this);
+            TextView textQTY=new EditText(this);
+            TRow=new TableRow(this);
+             TRow = (TableRow) TL.getChildAt(j+1);
 
-            TableRow TRow = (TableRow) TL.getChildAt(j+1);
-            TextView textSTATION = (TextView)TRow.getChildAt(0);
-            TextView textQTY = (TextView)TRow.getChildAt(1);
 
 
-            textSTATION.setText();
+            textSTATION.setText(art.getListe_Station().get(j).getStat_Name());
+            textQTY.setText(art.getListe_Station().get(j).getQTY());
+
+
         }
-
+        TL.addView(TRow,new TableLayout.LayoutParams(TableLayout.LayoutParams.FILL_PARENT, TableLayout.LayoutParams.WRAP_CONTENT));
 
     }
     //fileparser.saveExcelFile(this,"");
