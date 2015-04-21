@@ -27,18 +27,7 @@ import com.example.taieb.immkd.parsing.parsingxls;
 import com.example.taieb.immkd.util.SystemUiHider;
 import com.javacodegeeks.androidqrcodeexample.R;
 
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.ss.usermodel.Row;
-
 import java.io.InputStream;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.makeText;
@@ -165,9 +154,9 @@ if(myView!=null) {
 
 
     if(searchresult<1) {
-        System.out.println("NOTfound");
-
         View itemInfo1 = getLayoutInflater().inflate(R.layout.layooutnotfound, rl, true);
+        TextView txtsearch = (TextView) findViewById(R.id.textToSearch);
+        txtsearch.setText("Search result for : "+ValueToSearch);
     }else {
         System.out.println(searchresult);
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
@@ -175,6 +164,8 @@ if(myView!=null) {
 
         View itemInfo1 = getLayoutInflater().inflate(R.layout.layoutsearchok, rl, true);
 
+        TextView txtsearch = (TextView) findViewById(R.id.textToSearch);
+        txtsearch.setText("Search result for : "+ValueToSearch);
         TextView txtcase = (TextView) findViewById(R.id.CASETEXT);
         txtcase.setText(art.getCASE());
 
@@ -229,7 +220,7 @@ if(myView!=null) {
                 public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                     boolean handled = false;
                     if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                        simplesearch(v);
+                        simplesearch(ScanScreen.this.getCurrentFocus());
                         handled = true;
                     }
                     return handled;
@@ -349,7 +340,7 @@ if(myView!=null) {
 //////////////////////         FOR RH                 /////////////////////////////////////////////
 //////////////////////                                /////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-    public void forRH(View v) throws ParseException {
+  /*  public void forRH(View v) throws ParseException {
         final DataFormatter df = new DataFormatter();
         SimpleDateFormat Datedf = new SimpleDateFormat("HH:mm");
 
@@ -427,7 +418,7 @@ private String CalculHour(List<Date> listedate)
         return timeUnit.convert(diffInMillies,TimeUnit.MINUTES);
     }
 
-
+*/
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////          END                   /////////////////////////////////////////////
 //////////////////////         FOR RH                 /////////////////////////////////////////////

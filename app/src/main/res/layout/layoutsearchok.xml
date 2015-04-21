@@ -9,6 +9,25 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:weightSum="1" >
+
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/textToSearch"
+            android:textSize="30dp"
+            android:gravity="center_vertical|center_horizontal"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:weightSum="1">
 
         <TextView
@@ -152,4 +171,5 @@
             </TableLayout>
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
