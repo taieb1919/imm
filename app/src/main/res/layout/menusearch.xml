@@ -29,7 +29,8 @@
             android:textSize="@dimen/abc_action_bar_progress_bar_size"
             android:editable="true"
             android:background="#ffffffff"
-            android:layout_weight="1.13" />
+            android:layout_weight="1.13"
+            android:imeOptions="actionSearch"/>
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -51,14 +52,15 @@
     </LinearLayout>
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="1"
         android:id="@+id/scrollView" >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/resultview"
             >
 

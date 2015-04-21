@@ -10,10 +10,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -123,21 +126,14 @@ public class ScanScreen extends Activity {
 // simple Search
 public void simplesearch(View v) {
 
+
     final ProgressDialog dialog =ProgressDialog.show(this, "Searching", "Please wait...", true);
-
-
-    EditText mEdit = (EditText) findViewById(R.id.editText);
-    //System.out.println(mEdit.getText().toString());
-    String ValueToSearch= mEdit.getText().toString().trim();
-    int searchresult=fileparser.findRow(this.idmodele,ValueToSearch);
-
     new Thread()
     {
         public void run()
         {
             try
-            {
-                sleep(2000);
+            { sleep(1000);
             }
             catch (Exception e)
             {
@@ -146,31 +142,39 @@ public void simplesearch(View v) {
             dialog.dismiss();
         }
     }.start();
+    LinearLayout rl =(LinearLayout) this.findViewById(R.id.resultview);
 
+    EditText mEdit = (EditText) findViewById(R.id.editText);
+    //System.out.println(mEdit.getText().toString());
+    String ValueToSearch= mEdit.getText().toString().trim();
+
+    InputMethodManager imm = (InputMethodManager)getSystemService(
+            Context.INPUT_METHOD_SERVICE);
+    imm.hideSoftInputFromWindow(mEdit.getWindowToken(), 0);
+
+    int searchresult=fileparser.findRow(this.idmodele,ValueToSearch);
+
+
+
+
+    View myView = findViewById(R.id.containersearch);
+if(myView!=null) {
+    ViewGroup parent = (ViewGroup) myView.getParent();
+    parent.removeView(myView);
+}
 
 
     if(searchresult<1) {
         System.out.println("NOTfound");
+
+        View itemInfo1 = getLayoutInflater().inflate(R.layout.layooutnotfound, rl, true);
     }else {
         System.out.println(searchresult);
         Article art= fileparser.getallrows(idmodele, searchresult, ValueToSearch);
-        LinearLayout layprincipal = (LinearLayout) findViewById(R.id.LLB1);
 
 
-       // layoutsearchok.findViewById(R.id.)
-      //  R.layout.layoutsearchok.findViewById(R.id.textViewCASE);
-    //    layoutsearchok.findViewById(R.id.textViewCASE);
-//        LinearLayout l1=(LinearLayout) getResources().getLayout(R.layout.layoutsearchok);
-//        layprincipal.addView(l1);
+        View itemInfo1 = getLayoutInflater().inflate(R.layout.layoutsearchok, rl, true);
 
-
-
-        LinearLayout rl =(LinearLayout) this.findViewById(R.id.resultview);
-        LayoutInflater layoutInflater = (LayoutInflater)  this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-      //  layoutInflater.in
-    //    rl.addView(layoutInflater.inflate(R.layout.layoutsearchok, this, false), 1);
-
-                View layoutsearchok = findViewById(R.id.containersearchok);
         TextView txtcase = (TextView) findViewById(R.id.CASETEXT);
         txtcase.setText(art.getCASE());
 
@@ -219,6 +223,18 @@ public void simplesearch(View v) {
         else if (SearchMode == PART_NUM_SEARCH) {
 
             setContentView(R.layout.menusearch);
+            EditText editText = (EditText) findViewById(R.id.editText);
+            editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                @Override
+                public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                    boolean handled = false;
+                    if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                        simplesearch(v);
+                        handled = true;
+                    }
+                    return handled;
+                }
+            });
 
            //simplesearch();
         }
