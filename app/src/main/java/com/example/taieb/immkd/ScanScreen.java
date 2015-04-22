@@ -19,6 +19,8 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -174,6 +176,17 @@ if(myView!=null) {
 
         TextView txtPartName = (TextView) findViewById(R.id.PARTNAMETEXT);
         txtPartName.setText(art.getPart_Name());
+        TableLayout TL=(TableLayout)findViewById(R.id.tableresultat);
+        for (int j=0;j<art.getListe_Station().size();j++)
+        {
+
+            TableRow TRow = (TableRow) TL.getChildAt(j+1);
+            TextView textSTATION = (TextView)TRow.getChildAt(0);
+            TextView textQTY = (TextView)TRow.getChildAt(1);
+
+
+            textSTATION.setText();
+        }
 
 
     }
